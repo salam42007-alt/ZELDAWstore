@@ -196,3 +196,4 @@ showCategory('home');
 // تفعيل زر الرئيسية
 
 document.querySelector('button[data-target="home"]').classList.add("tab-active");
+

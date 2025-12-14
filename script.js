@@ -145,7 +145,7 @@ function showCategory(cat) {
                 <p style="font-size: 1.5em; margin-bottom: 30px; line-height: 1.6;">
                     للتواصل معنا تعال هنا و اتفح تكت
                 </p>
-                <a href="https://discord.com/channels/1441100233806319668/1441389509114724452" 
+                <a href="https://discord.com/channels/1446147214891286663/1449385976630608017" 
                    target="_blank" 
                    style="display: inline-block; padding: 15px 30px; background-color: #5865F2; color: white; border-radius: 8px; text-decoration: none; font-size: 1.2em; font-weight: bold; transition: background-color 0.2s;">
                    انقر هنا لفتح تذكرة على ديسكورد
@@ -194,4 +194,5 @@ searchInput.addEventListener("input", filterProducts);
 // الإعداد الأولي (عرض الرئيسية أولاً افتراضياً)
 showCategory('home');
 // تفعيل زر الرئيسية
+
 document.querySelector('button[data-target="home"]').classList.add("tab-active");

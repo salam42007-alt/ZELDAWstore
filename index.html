@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZELDAW Store - متجر ماينكرافت</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              background: 'hsl(222 47% 11%)',
+              primary: 'hsl(235 86% 65%)',
+              secondary: 'hsl(217 33% 17%)',
+              border: 'rgba(255, 255, 255, 0.1)',
+            },
+            fontFamily: {
+              cairo: ['Cairo', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
+</head>
+<body class="bg-background text-white font-cairo overflow-x-hidden">
+
+    <!-- Navbar -->
+    <div class="fixed top-0 left-0 right-0 z-50 flex flex-col">
+        <!-- Announcement Bar -->
+        <div class="bg-primary/90 text-white text-xs md:text-sm py-2 overflow-hidden relative z-50 border-b border-white/10 backdrop-blur-sm">
+            <div class="flex whitespace-nowrap">
+                <div class="marquee flex gap-16 px-4 font-bold items-center">
+                    <span class="flex items-center gap-2">🎉 مرحبًا بكم في متجر ZELDAW!</span>
+                    <span class="flex items-center gap-2">💎 خصومات حصرية لفترة محدودة على الرتب</span>
+                    <span class="flex items-center gap-2">🚀 انضم إلى سيرفر الديسكورد لمعرفة آخر الأخبار</span>
+                    <span class="flex items-center gap-2">🎮 استمتع بأفضل تجربة لعب في ماينكرافت</span>
+                    <!-- Duplicate -->
+                    <span class="flex items-center gap-2">🎉 مرحبًا بكم في متجر ZELDAW!</span>
+                    <span class="flex items-center gap-2">💎 خصومات حصرية لفترة محدودة على الرتب</span>
+                    <span class="flex items-center gap-2">🚀 انضم إلى سيرفر الديسكورد لمعرفة آخر الأخبار</span>
+                    <span class="flex items-center gap-2">🎮 استمتع بأفضل تجربة لعب في ماينكرافت</span>
+                </div>
+            </div>
+        </div>
+
+        <nav class="border-b border-white/10 bg-black/40 backdrop-blur-xl w-full transition-all duration-300">
+            <div class="container mx-auto px-4">
+                <div class="flex items-center justify-between h-16">
+                    <!-- Logo -->
+                    <a href="#" class="text-xl font-bold text-white flex items-center gap-2 hover:scale-105 transition-transform">
+                        <span class="text-primary text-2xl drop-shadow-[0_0_10px_rgba(88,101,242,0.5)]">⚡</span>
+                        ZELDAW Store
+                    </a>
+
+                    <!-- Desktop Nav -->
+                    <div class="hidden md:flex items-center gap-8">
+                        <a href="#" class="text-gray-300 hover:text-white hover:text-glow transition-all text-sm font-medium flex items-center gap-2 relative group">
+                            رئيسية
+                            <i data-lucide="home" class="w-4 h-4 group-hover:text-primary transition-colors"></i>
+                            <span class="absolute -bottom-1 right-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
+                        </a>
+                        <a href="#houses" class="text-gray-300 hover:text-white hover:text-glow transition-all text-sm font-medium flex items-center gap-2 relative group">
+                            المنازل
+                            <i data-lucide="box" class="w-4 h-4 group-hover:text-primary transition-colors"></i>
+                            <span class="absolute -bottom-1 right-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
+                        </a>
+                        <a href="#tools" class="text-gray-300 hover:text-white hover:text-glow transition-all text-sm font-medium flex items-center gap-2 relative group">
+                            الأدوات
+                            <i data-lucide="shopping-cart" class="w-4 h-4 group-hover:text-primary transition-colors"></i>
+                            <span class="absolute -bottom-1 right-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
+                        </a>
+                        <a href="#ranks" class="text-gray-300 hover:text-white hover:text-glow transition-all text-sm font-medium flex items-center gap-2 relative group">
+                            الرتب
+                            <i data-lucide="shield" class="w-4 h-4 group-hover:text-primary transition-colors"></i>
+                            <span class="absolute -bottom-1 right-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
+                        </a>
+                    </div>
+
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-btn" class="md:hidden text-white p-2 hover:bg-white/10 rounded-lg transition-colors">
+                        <i data-lucide="menu"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Nav -->
+            <div id="mobile-menu" class="hidden md:hidden glass border-t border-white/10 p-4 absolute w-full top-full bg-slate-900/95">
+                <div class="flex flex-col gap-4">
+                    <a href="#" class="text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-all block py-3 text-center flex items-center justify-center gap-2">
+                        رئيسية <i data-lucide="home" class="w-4 h-4"></i>
+                    </a>
+                    <a href="#houses" class="text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-all block py-3 text-center flex items-center justify-center gap-2">
+                        المنازل <i data-lucide="box" class="w-4 h-4"></i>
+                    </a>
+                    <a href="#tools" class="text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-all block py-3 text-center flex items-center justify-center gap-2">
+                        الأدوات <i data-lucide="shopping-cart" class="w-4 h-4"></i>
+                    </a>
+                    <a href="#ranks" class="text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-all block py-3 text-center flex items-center justify-center gap-2">
+                        الرتب <i data-lucide="shield" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center pt-24 pb-12">
+        <div class="absolute inset-0 z-0">
+            <img src="bg.png" alt="Minecraft Background" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-background"></div>
+        </div>
+
+        <div class="container mx-auto px-4 relative z-10 grid lg:grid-cols-2 gap-12 items-center">
+            <div class="text-center lg:text-right space-y-6 animate-fade-in-up">
+                <h1 class="text-4xl md:text-6xl font-bold text-white text-glow leading-tight">
+                    مرحبًا بك في <br/>
+                    <span class="text-primary">متجر ماينكرافت !</span>
+                </h1>
+                <p class="text-gray-200 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                    سيرفر ماينكرافت مميز يقدم لك تجربة لعب ممتعة ومليئة بالمغامرات! اكتشف المنازل الرائعة، الأدوات القوية، العملات، الرتب المميزة، والكلين المثير.
+                </p>
+                <div class="flex flex-wrap gap-4 justify-center lg:justify-start">
+                    <a href="#ranks" class="bg-primary hover:bg-primary/80 text-white px-8 py-4 text-lg rounded-xl shadow-lg shadow-primary/20 transition-all hover:scale-105 inline-block">
+                        تصفح الرتب
+                    </a>
+                    <a href="#houses" class="border border-white/20 hover:bg-white/10 text-white px-8 py-4 text-lg rounded-xl backdrop-blur-sm transition-all inline-block">
+                        رؤية المنازل
+                    </a>
+                </div>
+            </div>
+
+            <div class="flex justify-center animate-fade-in-up" style="animation-delay: 0.2s;">
+                <div class="glass-card p-8 rounded-2xl w-full max-w-md text-center space-y-6 border-t border-white/20">
+                    <div class="space-y-2">
+                        <h3 class="text-2xl font-bold text-primary">التواصل والدعم الفني</h3>
+                        <p class="text-gray-400">للتواصل معنا تعال هنا و اتفح تكت</p>
+                    </div>
+                    <button onclick="window.open('https://discord.gg/placeholder', '_blank')" class="w-full h-14 text-lg font-bold bg-[#5865F2] hover:bg-[#4752C4] shadow-lg shadow-[#5865F2]/20 transition-all hover:scale-105 rounded-lg flex items-center justify-center gap-2 text-white">
+                        <i data-lucide="message-circle" class="w-6 h-6"></i>
+                        انقر هنا لفتح تذكرة على ديسكورد
+                    </button>
+                    <p class="text-xs text-gray-500">(يفتح الرابط في نافذة جديدة)</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/50 cursor-pointer animate-bounce">
+            <a href="#houses" class="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center p-1">
+                <div class="w-1 h-3 bg-white/50 rounded-full"></div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Houses Section -->
+    <section class="py-24 bg-background relative z-10" id="houses">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4 text-white">المنازل</h2>
+                <p class="text-gray-400 text-lg">تصاميم خرافية لعالمك الخاص</p>
+                <div class="h-1 w-24 bg-primary mx-auto rounded-full mt-6"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="glass p-6 rounded-2xl hover:bg-white/5 transition-all group cursor-pointer border border-white/5 hover:border-primary/50 hover:-translate-y-2">
+                    <div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 text-primary group-hover:scale-110 transition-transform mx-auto">
+                        <i data-lucide="home" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-center text-white">منزل أسطوري 1</h3>
+                    <p class="text-2xl font-bold text-primary text-center mb-6">50$</p>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li class="flex items-center gap-2 justify-center"><i data-lucide="check" class="w-4 h-4 text-green-400"></i> حماية كاملة</li>
+                        <li class="flex items-center gap-2 justify-center"><i data-lucide="check" class="w-4 h-4 text-green-400"></i> تصميم عصري</li>
+                        <li class="flex items-center gap-2 justify-center"><i data-lucide="check" class="w-4 h-4 text-green-400"></i> مساحة واسعة</li>
+                    </ul>
+                    <button class="w-full mt-6 bg-white/5 hover:bg-primary hover:text-white border border-white/10 transition-all py-2 rounded-lg text-white">شراء الآن</button>
+                </div>
+                <!-- Card 2 -->
+                <div class="glass p-6 rounded-2xl hover:bg-white/5 transition-all group cursor-pointer border border-white/5 hover:border-primary/50 hover:-translate-y-2">
+                    <div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 text-primary group-hover:scale-110 transition-transform mx-auto">
+                        <i data-lucide="home" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-center text-white">منزل أسطوري 2</h3>
+                    <p class="text-2xl font-bold text-primary text-center mb-6">100$</p>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li class="flex items-center gap-2 justify-center"><i data-lucide="check" class="w-4 h-4 text-green-400"></i> حماية كاملة</li>
+                        <li class="flex items-center gap-2 justify-center"><i data-lucide="check" class="w-4 h-4 text-green-400"></i> تصميم عصري</li>
+                        <li class="flex items-center gap-2 justify-center"><i data-lucide="check" class="w-4 h-4 text-green-400"></i> مساحة واسعة</li>
+                    </ul>
+                    <button class="w-full mt-6 bg-white/5 hover:bg-primary hover:text-white border border-white/10 transition-all py-2 rounded-lg text-white">شراء الآن</button>
+                </div>
+                <!-- Card 3 -->
+                <div class="glass p-6 rounded-2xl hover:bg-white/5 transition-all group cursor-pointer border border-white/5 hover:border-primary/50 hover:-translate-y-2">
+                    <div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 text-primary group-hover:scale-110 transition-transform mx-auto">
+                        <i data-lucide="home" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-center text-white">منزل أسطوري 3</h3>
+                    <p class="text-2xl font-bold text-primary text-center mb-6">150$</p>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li class="flex items-center gap-2 justify-center"><i data-lucide="check" class="w-4 h-4 text-green-400"></i> حماية كاملة</li>
+                        <li class="flex items-center gap-2 justify-center"><i data-lucide="check" class="w-4 h-4 text-green-400"></i> تصميم عصري</li>
+                        <li class="flex items-center gap-2 justify-center"><i data-lucide="check" class="w-4 h-4 text-green-400"></i> مساحة واسعة</li>
+                    </ul>
+                    <button class="w-full mt-6 bg-white/5 hover:bg-primary hover:text-white border border-white/10 transition-all py-2 rounded-lg text-white">شراء الآن</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section class="py-24 bg-black/20 relative z-10" id="tools">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4 text-white">الأدوات</h2>
+                <p class="text-gray-400 text-lg">أسلحة ومعدات لا مثيل لها</p>
+                <div class="h-1 w-24 bg-primary mx-auto rounded-full mt-6"></div>
+            </div>
+
+            <div class="grid md:grid-cols-4 gap-6">
+                 <!-- Tool Cards -->
+                 <div class="glass p-6 rounded-2xl hover:bg-white/5 transition-all group cursor-pointer border border-white/5 hover:border-primary/50 hover:-translate-y-2">
+                    <div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 text-primary group-hover:scale-110 transition-transform mx-auto">
+                        <i data-lucide="zap" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-center text-white">سيف القوة 1</h3>
+                    <p class="text-2xl font-bold text-primary text-center mb-6">25$</p>
+                    <button class="w-full mt-6 bg-white/5 hover:bg-primary hover:text-white border border-white/10 transition-all py-2 rounded-lg text-white">شراء الآن</button>
+                </div>
+                 <div class="glass p-6 rounded-2xl hover:bg-white/5 transition-all group cursor-pointer border border-white/5 hover:border-primary/50 hover:-translate-y-2">
+                    <div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 text-primary group-hover:scale-110 transition-transform mx-auto">
+                        <i data-lucide="zap" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-center text-white">سيف القوة 2</h3>
+                    <p class="text-2xl font-bold text-primary text-center mb-6">50$</p>
+                    <button class="w-full mt-6 bg-white/5 hover:bg-primary hover:text-white border border-white/10 transition-all py-2 rounded-lg text-white">شراء الآن</button>
+                </div>
+                 <div class="glass p-6 rounded-2xl hover:bg-white/5 transition-all group cursor-pointer border border-white/5 hover:border-primary/50 hover:-translate-y-2">
+                    <div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 text-primary group-hover:scale-110 transition-transform mx-auto">
+                        <i data-lucide="zap" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-center text-white">سيف القوة 3</h3>
+                    <p class="text-2xl font-bold text-primary text-center mb-6">75$</p>
+                    <button class="w-full mt-6 bg-white/5 hover:bg-primary hover:text-white border border-white/10 transition-all py-2 rounded-lg text-white">شراء الآن</button>
+                </div>
+                 <div class="glass p-6 rounded-2xl hover:bg-white/5 transition-all group cursor-pointer border border-white/5 hover:border-primary/50 hover:-translate-y-2">
+                    <div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 text-primary group-hover:scale-110 transition-transform mx-auto">
+                        <i data-lucide="zap" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-center text-white">سيف القوة 4</h3>
+                    <p class="text-2xl font-bold text-primary text-center mb-6">100$</p>
+                    <button class="w-full mt-6 bg-white/5 hover:bg-primary hover:text-white border border-white/10 transition-all py-2 rounded-lg text-white">شراء الآن</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ranks Section -->
+    <section class="py-24 bg-background relative z-10" id="ranks">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4 text-white">الرتب</h2>
+                <p class="text-gray-400 text-lg">تميز عن الآخرين بخصائص فريدة</p>
+                <div class="h-1 w-24 bg-primary mx-auto rounded-full mt-6"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- VIP -->
+                <div class="glass p-8 rounded-3xl relative border border-white/10 hover:border-white/20 transition-all hover:-translate-y-2">
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold mb-2 text-yellow-400">رتبة VIP</h3>
+                        <div class="text-4xl font-bold text-white mb-2">10$</div>
+                        <div class="text-gray-500 text-sm">مدى الحياة</div>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center gap-3 text-gray-300"><div class="w-6 h-6 rounded-full bg-white/5 flex items-center justify-center shrink-0"><i data-lucide="check" class="w-3.5 h-3.5 text-primary"></i></div> اسم ملون</li>
+                        <li class="flex items-center gap-3 text-gray-300"><div class="w-6 h-6 rounded-full bg-white/5 flex items-center justify-center shrink-0"><i data-lucide="check" class="w-3.5 h-3.5 text-primary"></i></div> طيران في اللوبي</li>
+                        <li class="flex items-center gap-3 text-gray-300"><div class="w-6 h-6 rounded-full bg-white/5 flex items-center justify-center shrink-0"><i data-lucide="check" class="w-3.5 h-3.5 text-primary"></i></div> كيت يومي</li>
+                    </ul>
+                    <button class="w-full h-12 text-lg font-bold transition-all bg-white/10 hover:bg-white/20 rounded-lg text-white">اشترك الآن</button>
+                </div>
+                
+                <!-- MVP -->
+                <div class="glass p-8 rounded-3xl relative border border-primary shadow-2xl shadow-primary/20 bg-primary/5 transition-all hover:-translate-y-2">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-white px-4 py-1 rounded-full text-sm font-bold shadow-lg">الأكثر مبيعاً</div>
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold mb-2 text-blue-400">رتبة MVP</h3>
+                        <div class="text-4xl font-bold text-white mb-2">25$</div>
+                        <div class="text-gray-500 text-sm">مدى الحياة</div>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center gap-3 text-gray-300"><div class="w-6 h-6 rounded-full bg-white/5 flex items-center justify-center shrink-0"><i data-lucide="check" class="w-3.5 h-3.5 text-primary"></i></div> كل خصائص VIP</li>
+                        <li class="flex items-center gap-3 text-gray-300"><div class="w-6 h-6 rounded-full bg-white/5 flex items-center justify-center shrink-0"><i data-lucide="check" class="w-3.5 h-3.5 text-primary"></i></div> دخول السيرفر الممتلئ</li>
+                        <li class="flex items-center gap-3 text-gray-300"><div class="w-6 h-6 rounded-full bg-white/5 flex items-center justify-center shrink-0"><i data-lucide="check" class="w-3.5 h-3.5 text-primary"></i></div> حيوان أليف خاص</li>
+                        <li class="flex items-center gap-3 text-gray-300"><div class="w-6 h-6 rounded-full bg-white/5 flex items-center justify-center shrink-0"><i data-lucide="check" class="w-3.5 h-3.5 text-primary"></i></div> كيت أسبوعي</li>
+                    </ul>
+                    <button class="w-full h-12 text-lg font-bold transition-all bg-primary hover:bg-primary/90 rounded-lg text-white">اشترك الآن</button>
+                </div>
+
+                <!-- LEGEND -->
+                <div class="glass p-8 rounded-3xl relative border border-white/10 hover:border-white/20 transition-all hover:-translate-y-2">
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold mb-2 text-red-500">رتبة LEGEND</h3>
+                        <div class="text-4xl font-bold text-white mb-2">50$</div>
+                        <div class="text-gray-500 text-sm">مدى الحياة</div>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center gap-3 text-gray-300"><div class="w-6 h-6 rounded-full bg-white/5 flex items-center justify-center shrink-0"><i data-lucide="check" class="w-3.5 h-3.5 text-primary"></i></div> كل خصائص MVP</li>
+                        <li class="flex items-center gap-3 text-gray-300"><div class="w-6 h-6 rounded-full bg-white/5 flex items-center justify-center shrink-0"><i data-lucide="check" class="w-3.5 h-3.5 text-primary"></i></div> شات ملون</li>
+                        <li class="flex items-center gap-3 text-gray-300"><div class="w-6 h-6 rounded-full bg-white/5 flex items-center justify-center shrink-0"><i data-lucide="check" class="w-3.5 h-3.5 text-primary"></i></div> بارتيكل خاص</li>
+                        <li class="flex items-center gap-3 text-gray-300"><div class="w-6 h-6 rounded-full bg-white/5 flex items-center justify-center shrink-0"><i data-lucide="check" class="w-3.5 h-3.5 text-primary"></i></div> كيت شهري أسطوري</li>
+                    </ul>
+                    <button class="w-full h-12 text-lg font-bold transition-all bg-white/10 hover:bg-white/20 rounded-lg text-white">اشترك الآن</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-black/40 border-t border-white/10">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-2xl font-bold text-white mb-4 flex justify-center items-center gap-2">
+                <span class="text-primary">⚡</span> ZELDAW Store
+            </h2>
+            <p class="text-gray-400 mb-8">جميع الحقوق محفوظة © 2025</p>
+            <div class="flex justify-center gap-6 text-sm text-gray-500">
+                <a href="#" class="hover:text-white transition-colors">سياسة الخصوصية</a>
+                <a href="#" class="hover:text-white transition-colors">الشروط والأحكام</a>
+                <a href="#" class="hover:text-white transition-colors">تواصل معنا</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
